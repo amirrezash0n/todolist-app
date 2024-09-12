@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(#3f51bf, #000);
+    min-height: 100vh;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 380px;
+    margin: 0 auto;
+    padding: 20px 0 30px 0;
+    background-color: #fdfdfd;
+    position: relative;
+    border-radius: 5px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px ;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: #F44336;
+}
+
+.add-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin: 20px 15px 0 15px;
+    padding: 10px;
+    background-color: #F06292;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 150ms ease-in;
+}
+
+.add-task:hover{
+    background-color: #EC407A;
+}
+
+.add-task span{
+    color: #f0f0f0;
+    font-weight: bold;
+}
+#add-task-btn{
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: 25px;
+}
+
+.task-header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #F06292;
+}
+
+.tasks-wrapper{
+    /* overflow-y: auto; */
+}
+
+.task{
+    color: #616161;
+    margin: 20px 15px;
+    padding: 10px;
+    border: 3px solid #FF8A65;
+    border-radius: 10px;
+    background-color: #FFCCBC;
+}
+
+.task-top{
+    display: flex;
+    justify-content: space-between;
+}
+.task-top__title{
+    font-weight: 600;
+}
+.task-top__date{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.task-caption{
+    margin: 10px 0;
+    color: #212121;
+    overflow: hidden;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.task-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.trash ,
+.edit{
+    width: 22px;
+    height: 22px;
+    fill: #D84315;
+}
+
+/* Modal */
+
+.modal ,
+.edit-modal{
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    background-color: #FFCC80;
+    padding: 30px 0 15px 0;
+    transition: all 200ms ease-in-out;
+    width: 380px;
+    z-index: 20;
+    position: absolute;
+    top: 90px;
+}
+.modal--visible {
+    visibility: visible;
+    opacity: 1;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: #424242;
+}
+.modal-header__title{
+
+}
+.modal-header__cancel{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+.modal-top{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-top__title, .modal-top__date
+,.modal-caption{
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 10px;
+}
+.modal-top__date{
+    
+}
+.modal-caption{
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 140px;
+    max-height: 320px;
+}
+.modal-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.modal-submit__btn ,
+.modal-close__btn{
+    font-weight: 600;
+    background-color: transparent;
+    cursor: pointer;
+    color: #fff;
+    padding: 12px;
+    border-radius: 15px;
+    background-color: #FF5722;
+}
+
+.overlay {
+    visibility: hidden;
+    position: fixed;
+    inset: 0px;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0 0 0 / 0.8);
+    opacity: 0;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.overlay--visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 430px) {
+    .main,
+    .modal,
+    .edit-modal{
+        width: 100%;
+    }
+}

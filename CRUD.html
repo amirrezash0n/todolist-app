@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Project</title>
+    <link rel="stylesheet" href="styles/CRUD.css" />
+  </head>
+  <body>
+    <svg style="display: none">
+      <symbol id="trash" viewBox="0 -960 960 960">
+        <path
+          d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+        />
+      </symbol>
+      <symbol id="edit" viewBox="0 -960 960 960">
+        <path
+          d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"
+        />
+      </symbol>
+    </svg>
+
+    <div class="main">
+      <div class="header">
+        <h1>Todo App</h1>
+      </div>
+
+      <div href="#" class="add-task">
+        <span>Add New Task</span>
+        <div>
+          <span id="add-task-btn">+</span>
+        </div>
+      </div>
+
+      <h3 class="task-header">Tasks</h3>
+      <ul class="tasks-wrapper">
+        <!-- Start Append Items Here -->
+        
+        
+        <!-- Finish Append Items Here -->
+      </ul>
+
+      <!-- Modals -->
+      <!-- Add Task Modal (modal--visible) -->
+      <div class="modal" id="modal">
+        <div class="modal-header">
+            <h3 class="modal-header__title">Add New Task</h3>
+            <span class="modal-header__cancel">X</span>
+        </div>
+        <div class="modal-top">
+          <input type="text" id="modal-title" class="modal-top__title" placeholder="Title Modal"></input>
+        </div>
+        <textarea id="modal-caption" class="modal-caption" placeholder="Title Caption"></textarea>
+        <div class="modal-buttons">
+        <button class="modal-submit__btn">Add</button>
+        <button class="modal-close__btn">Close</button>
+        </div>
+      </div>
+      <!-- Edit Task Modal (modal--visible) -->
+      <div class="edit-modal" id="edit-modal">
+        <div class="modal-header">
+            <h3 class="modal-header__title">Edit Task</h3>
+            <span class="modal-header__cancel">X</span>
+        </div>
+        <div class="modal-top">
+          <input type="text" id="modal-top__title" class="modal-top__title" placeholder="Title Modal"></input>
+          <input type="text" id="modal-top__date" class="modal-top__date" placeholder="mm/dd/yyy"></input>
+        </div>
+        <textarea id="modal-caption-edit" class="modal-caption" placeholder="Title Caption"></textarea>
+        <div class="modal-buttons">
+        <button class="modal-submit__btn" id="update-todo">Update</button>
+        <button class="modal-close__btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add overlay--visible -->
+    <div class="overlay"></div> 
+    <script src="scripts/CRUD.js"></script>
+  </body>
+</html>
